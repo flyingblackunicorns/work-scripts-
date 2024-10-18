@@ -1,0 +1,19 @@
+#turn on
+net user administrator /active:yes
+
+#turn off
+net user administrator /active:no
+
+
+#set local admin and password
+@echo off
+setlocal
+set "username=BHSADMIN"
+set "password=Pu15@r200"
+
+:: Add user to Administrators group
+net localgroup Administrators %username% /add
+
+:: Set user password
+net user %username% %password%
+endlocal
